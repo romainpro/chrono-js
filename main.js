@@ -69,4 +69,8 @@ let paraSecond = document.createElement(`p`)
 let paraMinute =document.createElement(`p`)
     paraMinute.textContent=(`Il reste ${Math.floor(minutes)} minutes et ${Math.floor(staySeconde)} secondes`);
     divdisplay.appendChild(paraMinute)
+
+    let paraHours =document.createElement(`p`)
+    paraHours.textContent=(`Il reste ${Math.floor(stayhours)} heures ${Math.floor(minutes)} minutes et ${Math.floor(staySeconde)} secondes`);
+    divdisplay.appendChild(paraHours)
 }
