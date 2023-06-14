@@ -41,27 +41,16 @@ function displayTime(lastforDate){
 
     let second= lastforDate/1000//var seconde
     let stayMms=lastforDate%1000
-        console.log(second);
-        console.log(stayMms)
-        
+           
     let minutes= second/60 //var minutes
     let staySeconde =second%60
-        console.log(minutes)
-        console.log(staySeconde)
-    
- 
+       
     let hours =minutes/60 //var heures
     let stayMinutes =minutes%60
-        console.log(hours)
-        console.log(stayMinutes)
-
-
+        
     let days = hours/24 // var jours
     let stayhours=hours%24
-        console.log(hours)
-        console.log(stayhours)
- 
-
+        
     let week= days/7 // var semaines
     let stayDays=days%7
 
@@ -89,3 +78,5 @@ let paraweek =document.createElement(`p`)
 function updateDate(){
     dateNow = new Date()
 }
+
+// setInterval(updateDate,1000)
