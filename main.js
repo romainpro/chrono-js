@@ -16,10 +16,9 @@ function compareDate(){
 //////////////////////convertir date en milliseconde///////////////////////////////////////////////////////////////
     let inputDateValue= inputDate.value
     let inputDateParse = Date.parse(inputDateValue);
-    console.log(`date input ${inputDateParse}`)
+        console.log(`date input ${inputDateParse}`)
+        console.log( `date Now ${dateNow}`)
 
-   
-    console.log( `date Now ${dateNow}`)
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////compare les dates /////////////////////////////////////////////////////////////////
     if(inputDateParse<dateNow){
@@ -64,12 +63,10 @@ function displayTime(lastforDate){
   
 
 let paraSecond = document.createElement(`p`)
-paraSecond.textContent=(` il reste ${second} `)
-divdisplay.appendChild(paraSecond)
+    paraSecond.textContent=(` il reste ${Math.floor(second)}secondes pour arriver a la date  `)
+    divdisplay.appendChild(paraSecond)
 
-
-// let paraMinutesAndSecande = document.createElement(`p`)
-// paraMinutesAndSecande.textContent=(`${second} secondes et ${minutes}minutes`)
-// divdisplay.appendChild(paraMinutesAndSecande)
-
+let paraMinute =document.createElement(`p`)
+    paraMinute.textContent=(`Il reste ${Math.floor(minutes)} minutes et ${Math.floor(staySeconde)} secondes`);
+    divdisplay.appendChild(paraMinute)
 }
