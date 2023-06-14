@@ -70,7 +70,11 @@ let paraMinute =document.createElement(`p`)
     paraMinute.textContent=(`Il reste ${Math.floor(minutes)} minutes et ${Math.floor(staySeconde)} secondes`);
     divdisplay.appendChild(paraMinute)
 
-    let paraHours =document.createElement(`p`)
+let paraHours =document.createElement(`p`)
     paraHours.textContent=(`Il reste ${Math.floor(stayhours)} heures ${Math.floor(minutes)} minutes et ${Math.floor(staySeconde)} secondes`);
     divdisplay.appendChild(paraHours)
+
+let paraDays =document.createElement(`p`)
+    paraDays.textContent=(`Il reste ${Math.floor(days)} jour ${Math.floor(stayhours)} heures ${Math.floor(minutes)} minutes et ${Math.floor(staySeconde)} secondes`);
+    divdisplay.appendChild(paraDays)
 }
