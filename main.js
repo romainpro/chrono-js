@@ -60,7 +60,7 @@ function displayTime(lastforDate){
  
 
     let week= days/7 // var semaines
-  
+    let stayDays=days%7
 
 let paraSecond = document.createElement(`p`)
     paraSecond.textContent=(` il reste ${Math.floor(second)}secondes pour arriver a la date  `)
@@ -71,14 +71,14 @@ let paraMinute =document.createElement(`p`)
     divdisplay.appendChild(paraMinute)
 
 let paraHours =document.createElement(`p`)
-    paraHours.textContent=(`Il reste ${Math.floor(hours)} heures ${Math.floor(minutes)} minutes et ${Math.floor(staySeconde)} secondes`);
+    paraHours.textContent=(`Il reste ${Math.floor(hours)} heures ${Math.floor(stayMinutes)} minutes et ${Math.floor(staySeconde)} secondes`);
     divdisplay.appendChild(paraHours)
 
 let paraDays =document.createElement(`p`)
-    paraDays.textContent=(`Il reste ${Math.floor(days)} jour ${Math.floor(stayhours)} heures ${Math.floor(minutes)} minutes et ${Math.floor(staySeconde)} secondes`);
+    paraDays.textContent=(`Il reste ${Math.floor(days)} jour ${Math.floor(stayhours)} heures ${Math.floor(stayMinutes)} minutes et ${Math.floor(staySeconde)} secondes`);
     divdisplay.appendChild(paraDays)
 
 let paraweek =document.createElement(`p`)
-    paraweek.textContent=(`Il reste ${Math.floor(week)} semaine ${Math.floor(days)} jour ${Math.floor(stayhours)} heures ${Math.floor(minutes)} minutes et ${Math.floor(staySeconde)} secondes`);
+    paraweek.textContent=(`Il reste ${Math.floor(week)} semaine ${Math.floor(stayDays)} jour ${Math.floor(stayhours)} heures ${Math.floor(minutes)} minutes et ${Math.floor(staySeconde)} secondes`);
     divdisplay.appendChild(paraweek)
 }
