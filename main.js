@@ -36,6 +36,9 @@ function compareDate(){
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 function displayTime(lastforDate){
 
+    updateDate()
+
+
     let second= lastforDate/1000//var seconde
     let stayMms=lastforDate%1000
         console.log(second);
@@ -79,6 +82,10 @@ let paraDays =document.createElement(`p`)
     divdisplay.appendChild(paraDays)
 
 let paraweek =document.createElement(`p`)
-    paraweek.textContent=(`Il reste ${Math.floor(week)} semaine ${Math.floor(stayDays)} jour ${Math.floor(stayhours)} heures ${Math.floor(minutes)} minutes et ${Math.floor(staySeconde)} secondes`);
+    paraweek.textContent=(`Il reste ${Math.floor(week)} semaine ${Math.floor(stayDays)} jour ${Math.floor(stayhours)} heures ${Math.floor(stayMinutes)} minutes et ${Math.floor(staySeconde)} secondes`);
     divdisplay.appendChild(paraweek)
+}
+
+function updateDate(){
+    dateNow = new Date()
 }
