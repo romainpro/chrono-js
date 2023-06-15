@@ -13,4 +13,4 @@
     [X] en jours, heures, minutes et secondes
     [X] en mois, jours, heures, minutes et secondes
 
-[-]L'affichage doit ser rafraîchir toutes les secondes de manière à afficher un décompte    
+[X]L'affichage doit ser rafraîchir toutes les secondes de manière à afficher un décompte    

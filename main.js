@@ -9,6 +9,7 @@ let paraDays =document.createElement(`p`)
 let paraHours =document.createElement(`p`)
 let paraMinute =document.createElement(`p`)
 let paraSecond = document.createElement(`p`)
+let h1Error = document.createElement(`h1`);
 
 btnSubmit.addEventListener(`click`,updateDate);
 
@@ -27,11 +28,11 @@ function compareDate(){
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////compare les dates /////////////////////////////////////////////////////////////////
     if(inputDateParse<dateNow){
-        console.log(`erreur date est deja passer`);
-        let h1Error = document.createElement(`h1`);
         h1Error.textContent ="erreur date est deja passer";
+        h1Error.remove()
         divError.appendChild(h1Error);
     }else if (inputDateParse >= dateNow){
+        h1Error.remove()
         let lastforDate = inputDateParse - dateNow;//  var temps restant avent date 
         displayTime(lastforDate);     
     }
@@ -73,8 +74,6 @@ function displayTime(lastforDate){
 
     paraweek.textContent=(`Il reste ${Math.floor(week)} semaine ${Math.floor(stayDays)} jour ${Math.floor(stayhours)} heures ${Math.floor(stayMinutes)} minutes et ${Math.floor(staySeconde)} secondes`);
     divdisplay.appendChild(paraweek)
-
-
 
 }
 
