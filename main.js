@@ -1,24 +1,29 @@
 let inputDate = document.querySelector(`#inputDate`)
-let dateNow = new Date();
-
 
 
 let btnSubmit= document.querySelector(`#submit`)
 let divError = document.querySelector(`.error`)
 let divdisplay = document.querySelector(`.display`)
+let paraweek =document.createElement(`p`)
+let paraDays =document.createElement(`p`)
+let paraHours =document.createElement(`p`)
+let paraMinute =document.createElement(`p`)
+let paraSecond = document.createElement(`p`)
 
-btnSubmit.addEventListener(`click`,compareDate);
+btnSubmit.addEventListener(`click`,updateDate);
 
 
-// let NewDateInputConverted= new Date(dateParse) // converti  les millisecondes en date 
+
+function updateDate(){
+    dateNow = new Date()
+    compareDate()
+    
+}
 
 function compareDate(){
 //////////////////////convertir date en milliseconde///////////////////////////////////////////////////////////////
     let inputDateValue= inputDate.value
     let inputDateParse = Date.parse(inputDateValue);
-        console.log(`date input ${inputDateParse}`)
-        console.log( `date Now ${dateNow}`)
-
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////compare les dates /////////////////////////////////////////////////////////////////
     if(inputDateParse<dateNow){
@@ -27,20 +32,15 @@ function compareDate(){
         h1Error.textContent ="erreur date est deja passer";
         divError.appendChild(h1Error);
     }else if (inputDateParse >= dateNow){
-        
         let lastforDate = inputDateParse - dateNow;//  var temps restant avent date 
-        displayTime(lastforDate);
-            
+        displayTime(lastforDate);     
     }
 };
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 function displayTime(lastforDate){
 
-    updateDate()
-
-
     let second= lastforDate/1000//var seconde
-    let stayMms=lastforDate%1000
+    // let stayMms=lastforDate%1000
            
     let minutes= second/60 //var minutes
     let staySeconde =second%60
@@ -54,29 +54,29 @@ function displayTime(lastforDate){
     let week= days/7 // var semaines
     let stayDays=days%7
 
-let paraSecond = document.createElement(`p`)
+    
     paraSecond.textContent=(` il reste ${Math.floor(second)}secondes pour arriver a la date  `)
     divdisplay.appendChild(paraSecond)
 
-let paraMinute =document.createElement(`p`)
+
     paraMinute.textContent=(`Il reste ${Math.floor(minutes)} minutes et ${Math.floor(staySeconde)} secondes`);
     divdisplay.appendChild(paraMinute)
 
-let paraHours =document.createElement(`p`)
+
     paraHours.textContent=(`Il reste ${Math.floor(hours)} heures ${Math.floor(stayMinutes)} minutes et ${Math.floor(staySeconde)} secondes`);
     divdisplay.appendChild(paraHours)
 
-let paraDays =document.createElement(`p`)
+
     paraDays.textContent=(`Il reste ${Math.floor(days)} jour ${Math.floor(stayhours)} heures ${Math.floor(stayMinutes)} minutes et ${Math.floor(staySeconde)} secondes`);
     divdisplay.appendChild(paraDays)
 
-let paraweek =document.createElement(`p`)
+
     paraweek.textContent=(`Il reste ${Math.floor(week)} semaine ${Math.floor(stayDays)} jour ${Math.floor(stayhours)} heures ${Math.floor(stayMinutes)} minutes et ${Math.floor(staySeconde)} secondes`);
     divdisplay.appendChild(paraweek)
+
+
+
 }
 
-function updateDate(){
-    dateNow = new Date()
-}
+setInterval(`updateDate()`,1000)
 
-// setInterval(updateDate,1000)
