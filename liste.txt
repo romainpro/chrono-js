@@ -2,15 +2,15 @@
 
 [-]Si la date est dans le passé, afficher un message d'erreur
     [X]convertion des date pour pouvoir les conparer
-    [-]decomposer objet date en jours/mois/anneés
+    [X]decomposer objet date en jours/mois/anneés
 
 [X]Si elle est au mauvais format, afficher un message d'erreur
 
-[-]Afficher le temps restant d'ici cette date sous plusieurs formats 
+[X]Afficher le temps restant d'ici cette date sous plusieurs formats 
     [X] en secondes
-    [-] en minutes et en secondes
-    [-] en heures, minutes et secondes
-    [-] en jours, heures, minutes et secondes
-    [-] en mois, jours, heures, minutes et secondes
+    [X] en minutes et en secondes
+    [X] en heures, minutes et secondes
+    [X] en jours, heures, minutes et secondes
+    [X] en mois, jours, heures, minutes et secondes
 
 [-]L'affichage doit ser rafraîchir toutes les secondes de manière à afficher un décompte    
